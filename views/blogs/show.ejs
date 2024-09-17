@@ -1,0 +1,27 @@
+<% layout("boilerplate") -%>
+<body>
+    <div class="card offset-2">
+        <h1 class="offset-1"><%=detail.title%></h1>
+        <img src="<%=detail.image%>" class="card-img-top show-img" alt="listing_image">
+        
+        <ul>
+            <b><li><%=detail.description%></li></b>
+            <b><li><%=detail.location%></li></b>
+            <b><li><%=detail.country%></li></b>
+            <br>
+            <div class="row">
+                <div >
+                    <a href="/listing/<%=detail._id%>/edit" class="btn btn-dark col-7" id="but1">Edit the Blog</a>
+                </div>
+                <br>
+                <br>
+                <div>
+                    <form method="POST" action="/listing/<%=detail._id%>?_method=DELETE">
+                        <button class="btn btn-dark col-7 ">Delete this Blog</button>
+                    </form>
+                </div>                
+            </div>
+        </ul>
+    </div>
+</body>
+</html>

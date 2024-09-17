@@ -1,0 +1,38 @@
+<% layout("boilerplate") -%>
+<div class="row">
+    <div class="col-8 offset-2">
+        <h1>Create a new Blog</h1>
+        <form method="POST" action="/listing">
+            <div>
+                <label for="title" class="form-label">Title</label>
+                <input id="title" type="text" name="title" placeholder="enter title" class="form-control">
+            </div>
+            <br><br>
+            <div>
+                <label for="description" class="form-label">Description</label>
+                <textarea name="description" placeholder="enter description" id="description" class="form-control"></textarea>
+            </div>
+            <br><br>
+            <div>
+                <label for="img" class="form-label">Image Link</label>
+                <input id="img" type="text" name="image" placeholder="enter image url link" class="form-control">
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col col-md-8">
+                    <label for="country" class="form-label">Country</label>
+                    <input id="country" type="text" name="country" type="text" placeholder="enter country" class="form-control">
+                </div>
+            </div>
+            
+            <br><br>
+            <div>
+                <label for="location" class="form-label">Location</label>
+                <input id="location" type="text" name="location" type="text" placeholder="enter location" class="form-control">
+            </div>
+            <br><br>
+            <button class="btn">Add</button>
+            <br><br>
+        </form>
+    </div>
+</div>
