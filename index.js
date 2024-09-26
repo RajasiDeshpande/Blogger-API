@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.engine('ejs', ejsMate);
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/wanderlust');
+  await mongoose.connect('mongodb+srv://rajasi:R%40jasi04@cluster0.pjlgq.mongodb.net/wanderlust?retryWrites=true&w=majority&appName=Cluster0');
 }
 main()
 .then(()=>{
@@ -54,7 +54,6 @@ app.post("/listing",(req,res)=>{
     let newListing=new Listing({
         title:title,
         description:description,
-        price:price,
         country:country,
         location:location
     })
@@ -72,13 +71,12 @@ app.get("/listing/:id/edit",async(req,res)=>{
 //Update Route
 app.put("/listing/:id",async(req,res)=>{
     let {id}=req.params;
-    let {title,description,image,price,country,location}=req.body;
+    let {title,description,image,country,location}=req.body;
     try{
         await Listing.findByIdAndUpdate(id,{
             title:title,
             description:description,
             image:image,
-            price:price,
             country:country,
             location:location 
         })
